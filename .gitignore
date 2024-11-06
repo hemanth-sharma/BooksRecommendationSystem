@@ -1,3 +1,5 @@
 
 venv/
 .env
+data/goodreads_books_raw.json
+
