@@ -13,15 +13,12 @@ def recommend_books(user_input, tfidf_matrix, tfidf_vectorizer, books_data, top_
     """
     Recommend books based on user input by calculating cosine similarity.
     """
-    # Get the user's input vector
     user_vector = get_user_input_vector(user_input, tfidf_vectorizer)
     
     # Calculate the cosine similarity between the user's input and each book's description
     cosine_similarities = cosine_similarity(user_vector, tfidf_matrix)
-    
-    # Flatten the cosine similarity matrix (it will be a 2D array) and get the indices sorted by similarity
     similarity_scores = cosine_similarities.flatten()
-    sorted_indices = np.argsort(similarity_scores, axis=0)[::-1]  # Sort in descending order
+    sorted_indices = np.argsort(similarity_scores, axis=0)[::-1]
     
     # Get the top N most similar books
     top_books = []
