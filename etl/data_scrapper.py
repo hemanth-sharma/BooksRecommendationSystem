@@ -44,7 +44,7 @@ async def fetch_book_info(session, book_url):
         logging.error(f"Error while scraping {book_url}: {e}")
         return None
 
-async def main():
+async def run_data_scrapper():
     books_data = []
     books_df = pd.read_json("data/goodreads_books_processed.json", lines=True)
     
@@ -64,14 +64,4 @@ async def main():
     
     logging.info(f"Scraped data for {len(books_data)} books.")
 
-# Check if we're in an asynchronous context
-if __name__ == "__main__":
-    start_time = time.time()
-    try:
-        loop = asyncio.get_event_loop()
-        loop.run_until_complete(main())
-    except RuntimeError as e:
-        if 'This event loop is already running' in str(e):
-            books_data = asyncio.run(main())
-    end_time = time.time()
-    print(f"Time taken: {end_time - start_time} seconds")
+
