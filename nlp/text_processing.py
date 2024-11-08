@@ -5,9 +5,7 @@ from nltk.stem import WordNetLemmatizer
 from nltk.tokenize import word_tokenize
 import nltk
 
-# lowercasing
-# remove punctuation 
-# remove stop words (like "the", "is")
+# lowercasing, remove punctuation, remove stop words (like "the", "is")
 # word lemmatization ("processing" > "process")
 nltk.download("stopwords")
 nltk.download('punkt')
