@@ -23,3 +23,4 @@ jinja2
 uvicorn
 scikit-learn
 nltk
+python-multipart
