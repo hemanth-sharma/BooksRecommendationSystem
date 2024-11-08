@@ -1,5 +1,15 @@
+# Ignore all __pycache__ folders and compiled Python files
+**/__pycache__
+*.py[cod]
+**/.ipynb_checkpoints
 
+# Ignore virtual environemnts
 venv/
+myenv/
+
+# Ignore .env
 .env
+
+# Ignore raw data file because it's too big.
 data/goodreads_books_raw.json
 .vscode/

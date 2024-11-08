@@ -18,3 +18,8 @@ six==1.16.0
 soupsieve==2.6
 tzdata==2024.2
 yarl==1.17.1
+fastapi
+jinja2
+uvicorn
+scikit-learn
+nltk

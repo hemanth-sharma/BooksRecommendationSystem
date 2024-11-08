@@ -33,6 +33,7 @@ def recommend_books(user_input, tfidf_matrix, tfidf_vectorizer, books_data, top_
             'author': book['author'],
             'description': book['description'],
             'similarity': similarity_scores[index],
+            'genres': book['genres']
 
         })
     

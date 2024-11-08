@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Recommendations</title>
+    <link rel="stylesheet" href="/static/css/styles.css">
+</head>
+<body>
+    <header>
+        <h1>Discover Your Next Favorite Book</h1>
+    </header>
+
+    <!-- Check if there are any books to display -->
+    {% if books %}
+        <!-- If there are books, display them -->
+        <section id="book-cards">
+            {% for book in books %}
+                <div class="card">
+                    <h2>Title: {{ book.title }}</h2>
+                    <p><strong>Author:</strong> {{ book.author }}</p>
+                    <p class="description">
+                        <span class="short-text">{{ book.description[:100] }}</span>
+                        <span class="full-text">{{ book.description }}</span>
+                        <button class="read-more-btn">Read More</button>
+                    </p>
+                    <p><strong>Genres:</strong> {{ book.genres }}</p>
+                    <a href="{{ book.url }}" target="_blank">More on Goodreads</a>
+                </div>
+            {% endfor %}
+        </section>
+        {% endif %}
+        
+    <section id="recommend-section">
+        <h2>Looking for Something Specific?</h2>
+        <form action="/api/recommend" method="POST">
+            <textarea name="book_query" id="book_query" placeholder="Write the type of book you're looking for..." rows="6"></textarea>
+            <button type="submit">Submit</button>
+        </form>
+    </section>
+    
+
+    <script src="/static/js/script.js"></script>
+</body>
+</html>
