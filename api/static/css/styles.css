@@ -21,11 +21,12 @@ body {
   
   #book-cards {
     display: flex;
-    flex-direction: column;  /* Stacked vertically */
-    gap: 20px;               /* Add space between cards */
+    flex-direction: column;  
+    gap: 20px;               
     justify-content: flex-start;
     padding: 20px;
     width: 100%;
+    
   }
   
   .card {
@@ -33,10 +34,10 @@ body {
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-    width: 100%;             /* Make each card take up the full width */
+    width: 100%;             
     text-align: left;
     transition: height 0.3s ease;
-    margin-bottom: 20px;     /* Space between cards */
+    margin-bottom: 20px;     
   }
   
   .card h2 {
